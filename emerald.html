@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MF Garage Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #004225;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #00351c;
+      padding: 15px 30px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #4ade80;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #00351c, #004225);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background: #16a34a;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #15803d;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: #00351c;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 15px;
+      display: inline-block;
+      width: 250px;
+      vertical-align: top;
+    }
+
+    .card h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: #4ade80;
+      font-weight: bold;
+    }
+
+    .form-agenda {
+      max-width: 400px;
+      margin: auto;
+      background: #00351c;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: left;
+    }
+
+    .form-agenda input, .form-agenda select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #002a16;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>🚘 MF Garage Studio</h1>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#horarios">Horários</a>
+      <a href="#agendamento">Agendar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Cuidando do seu carro com excelência</h2>
+    <p>Lavagem simples, premium e estética automotiva. Seu carro merece o melhor! </p>
+    <button class="btn" onclick="document.getElementById('agendamento').scrollIntoView({behavior:'smooth'})">Agendar Agora</button>
+  </section>
+
+  <!-- Serviços -->
+  <section class="section" id="servicos">
+    <h3 style="font-size: 28px; margin-bottom: 20px;">Tabela de Valores</h3>
+    <div class="card">
+      <h4>Lavagem Simples</h4>
+      <ul>
+        <li>✔️ Lavagem</li>
+        <li>✔️ Limpeza interna</li>
+        <li>✔️ Cera</li>
+        <li>✔️ Pretinho</li>
+      </ul>
+      <p>R$ 60,00</p>
+      <small>SUV/Picapes: R$ 80,00</small>
+    </div>
+    <div class="card">
+      <h4>Lavagem Premium</h4>
+      <ul>
+        <li>✔️ Lavagem</li>
+        <li>✔️ Limpeza interna</li>
+        <li>✔️ Revitalização plásticos</li>
+        <li>✔️ Cera de carnaúba</li>
+        <li>✔️ Pretinho</li>
+      </ul>
+      <p>R$ 90,00</p>
+      <small>SUV/Picapes: R$ 110,00</small>
+    </div>
+  </section>
+
+  <!-- Horários -->
+  <section class="section" id="horarios" style="background:#00351c;">
+    <h3 style="font-size: 28px; margin-bottom: 20px;">Horário de Funcionamento</h3>
+    <p>Segunda a Sexta: <b>8h às 18h</b></p>
+    <p>Sábado: <b>8h às 16h</b></p>
+  </section>
+
+  <!-- Agendamento -->
+  <section class="section" id="agendamento">
+    <h3 style="font-size: 28px; margin-bottom: 20px;">Agende seu Horário</h3>
+    <form class="form-agenda" onsubmit="agendar(event)">
+      <input type="text" placeholder="Seu nome" id="nome" required>
+      <input type="tel" placeholder="Telefone" id="telefone" required>
+      <select id="servico" required>
+        <option value="">Selecione o serviço</option>
+        <option value="Lavagem Simples">Lavagem Simples</option>
+        <option value="Lavagem Premium">Lavagem Premium</option>
+      </select>
+      <input type="date" id="data" required>
+      <button class="btn" type="submit" style="width:100%;">Agendar</button>
+    </form>
+  </section>
+
+  <!-- Contato -->
+  <section class="section" id="contato" style="background:#00351c;">
+    <h3 style="font-size: 28px; margin-bottom: 20px;">Contato</h3>
+    <p>📍 Rua Barão do Cerro Azul, 278</p>
+    <p>📞 (41) 99778-3980</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 MF Garage Studio - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function agendar(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const servico = document.getElementById('servico').value;
+      const data = document.getElementById('data').value;
+
+      alert(`Agendamento realizado!\\n\\nNome: ${nome}\\nTelefone: ${telefone}\\nServiço: ${servico}\\nData: ${data}`);
+    }
+  </script>
+</body>
+</html>
