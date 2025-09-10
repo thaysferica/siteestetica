@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MF Garage Studio</title>
   <style>
     body {
@@ -103,7 +103,8 @@
       text-align: left;
     }
 
-    .form-agenda input, .form-agenda select {
+    .form-agenda input,
+    .form-agenda select {
       width: 100%;
       padding: 10px;
       margin: 8px 0;
@@ -134,8 +135,10 @@
   <!-- Hero -->
   <section class="hero">
     <h2>Cuidando do seu carro com excelência</h2>
-    <p>Lavagem simples, premium e estética automotiva. Seu carro merece o melhor! </p>
-    <button class="btn" onclick="document.getElementById('agendamento').scrollIntoView({behavior:'smooth'})">Agendar Agora</button>
+    <p>Lavagem simples, premium e estética automotiva. Seu carro merece o melhor!</p>
+    <button class="btn" onclick="document.getElementById('agendamento').scrollIntoView({behavior:'smooth'})">
+      Agendar Agora
+    </button>
   </section>
 
   <!-- Serviços -->
@@ -177,15 +180,15 @@
   <section class="section" id="agendamento">
     <h3 style="font-size: 28px; margin-bottom: 20px;">Agende seu Horário</h3>
     <form class="form-agenda" onsubmit="agendar(event)">
-      <input type="text" placeholder="Seu nome" id="nome" required>
-      <input type="tel" placeholder="Telefone" id="telefone" required>
+      <input type="text" placeholder="Seu nome" id="nome" required />
+      <input type="tel" placeholder="Telefone" id="telefone" required />
       <select id="servico" required>
         <option value="">Selecione o serviço</option>
         <option value="Lavagem Simples">Lavagem Simples</option>
         <option value="Lavagem Premium">Lavagem Premium</option>
       </select>
-      <input type="date" id="data" required>
-      <button class="btn" type="submit" style="width:100%;">Agendar</button>
+      <input type="date" id="data" required />
+      <button class="btn" type="submit" style="width: 100%;">Agendar</button>
     </form>
   </section>
 
@@ -197,9 +200,7 @@
   </section>
 
   <!-- Rodapé -->
-  <footer>
-    © 2025 MF Garage Studio - Todos os direitos reservados.
-  </footer>
+  <footer>© 2025 MF Garage Studio - Todos os direitos reservados.</footer>
 
   <script>
     function agendar(e) {
@@ -209,7 +210,13 @@
       const servico = document.getElementById('servico').value;
       const data = document.getElementById('data').value;
 
-      alert(`Agendamento realizado!\\n\\nNome: ${nome}\\nTelefone: ${telefone}\\nServiço: ${servico}\\nData: ${data}`);
+      const numeroWhats = '554197783980'; // número sem espaços, parênteses ou traços
+      const mensagem = `Olá! Gostaria de agendar um serviço.%0A%0ANome: ${nome}%0ATelefone: ${telefone}%0AServiço: ${servico}%0AData: ${data}`;
+
+      // Abre o WhatsApp Web/Aplicativo com a mensagem pronta para envio
+      const url = `https://wa.me/${numeroWhats}?text=${mensagem}`;
+
+      window.open(url, '_blank');
     }
   </script>
 </body>
